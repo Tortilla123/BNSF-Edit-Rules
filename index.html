@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>RER EDIT RULES</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--  Bootstrap Table CSS for the table -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="/src/css/sidebar.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <h3>
+                        Search Criteria
+                    </h3>
+                </li>
+                <li>
+                    <select id="search-rule-dropdown">
+                        <option value="CDI OVERRIDE EDITS">CDI OVERRIDE EDITS</option>
+                        <option value="ENFORCE FLEET LIMIT EDITS">ENFORCE FLEET LIMIT EDITS</option>
+                    </select>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+                <button class="btn btn-info" id="menu-toggle">></button>
+            </nav>
+
+            <div class="container-fluid" style="overflow-x:auto;">
+
+                <h1>
+                    CDI OVERRIDE EDITS
+                </h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th data-field="RuleLevel"> Rule Level </th>
+                            <th data-field="CustomerName"> Customer Name </th>
+                            <th data-field="CityName"> City Name </th>
+                            <th data-field="State"> State </th>
+                            <th data-field="Fleet"> Fleet </th>
+                            <th data-field="Type"> Type </th>
+                            <th data-field="Overage"> Overage </th>
+                            <th data-field="Maximum"> Maximum </th>
+                            <th data-field="LstMaintId"> Lst Maint Id </th>
+                            <th data-field="LstMaintTS"> Lst Maint TS </th>
+                            <th data-field="Comments"> Comments</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!--JQuery-->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+    <!--File for Bootstrap table-->
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"> </script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+    <!--Import the data-->
+    <script type="text/javascript" src="data.js"> </script>
+
+    <!--Display data to table-->
+    <script type='text/javascript'>
+        $(document).ready(function () {
+
+            // Creates the bootstrap table with the data provided
+            $('table').bootstrapTable({
+                data: cdioverrideedits
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
