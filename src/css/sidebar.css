@@ -25,6 +25,10 @@
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
+#table-info{
+    display: flex;
+    align-items: flex-end;
+}
 
 #wrapper.toggled #sidebar-wrapper {
     width: 250px;
@@ -55,23 +59,27 @@
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    
 }
 
-.sidebar-nav li a {
+.sidebar-nav li h3 {
     display: block;
     text-decoration: none;
-    color: #999999;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
 }
 
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
+.sidebar-nav li input {
+    margin-top: 15%;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 82%;
+}
+
+.sidebar-nav li input:hover {
     text-decoration: none;
+    color: black;
+    background: rgba(255, 255, 255, 0.829);
 }
 
 .sidebar-nav > .sidebar-brand {

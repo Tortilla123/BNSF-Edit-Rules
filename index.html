@@ -17,6 +17,9 @@
     <!--  Bootstrap Table CSS for the table -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
 
+    <!-- FontAwesome Icons-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
     <!-- Custom styles for this template -->
     <link href="/src/css/sidebar.css" rel="stylesheet" type="text/css">
 
@@ -34,11 +37,28 @@
                         Search Criteria
                     </h3>
                 </li>
+
+                <!--Drop down menu to select which data table to display-->
                 <li>
-                    <select id="search-rule-dropdown">
-                        <option value="CDI OVERRIDE EDITS">CDI OVERRIDE EDITS</option>
-                        <option value="ENFORCE FLEET LIMIT EDITS">ENFORCE FLEET LIMIT EDITS</option>
-                    </select>
+                    <div class="dropdown">
+
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Rule
+                        </button>
+
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <option class="dropdown-item" id="cdi-override">CDI OVERRIDE EDITS</option>
+                            <option class="dropdown-item" id="enforce-fleet">ENFORCE FLEET LIMIT EDITS</option>
+                        </div>
+
+                    </div>
+                </li>
+                
+                <!--Search the table-->
+                <li>
+                    <input class = "form-control" id="filter" type = "text" placeholder = "Search...">
                 </li>
 
             </ul>
@@ -48,17 +68,19 @@
         <!-- Page Content -->
         <div id="page-content-wrapper">
 
+            <!--Top of page header-->
             <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                <button class="btn btn-info" id="menu-toggle">></button>
+                <button class="btn btn-info" id="menu-toggle"><i class="icon-angle-left"></i> </button>
             </nav>
 
             <div class="container-fluid" style="overflow-x:auto;">
 
-                <h1>
-                    CDI OVERRIDE EDITS
-                </h1>
-                <table class="table table-striped">
-                    <thead>
+                <!--Table to display data-->
+                <table class="table table-striped" >
+                    <!--Table Name-->
+                    <div id="addTableTitleHere"></div>
+                    
+                    <thead >
                         <tr>
                             <th data-field="RuleLevel"> Rule Level </th>
                             <th data-field="CustomerName"> Customer Name </th>
@@ -71,8 +93,16 @@
                             <th data-field="LstMaintId"> Lst Maint Id </th>
                             <th data-field="LstMaintTS"> Lst Maint TS </th>
                             <th data-field="Comments"> Comments</th>
+                            <th> Actions </th>
                         </tr>
                     </thead>
+
+
+                    <tbody id = "tableBody">
+                        <tr>
+                           
+                        </tr>
+                    </tbody>
                 </table>
 
             </div>
@@ -94,27 +124,70 @@
         crossorigin="anonymous"></script>
     <!--File for Bootstrap table-->
     <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"> </script>
+  
 
-    <!-- Menu Toggle Script -->
+    <!-- Sidebar Toggle Script -->
     <script>
         $("#menu-toggle").click(function (e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
+            $(this).find("i").toggleClass("icon-angle-right");
         });
     </script>
 
-    <!--Import the data-->
+    <!--Import the data from JS Json file-->
     <script type="text/javascript" src="data.js"> </script>
 
-    <!--Display data to table-->
+    <!-- JS Display data to table-->
     <script type='text/javascript'>
-        $(document).ready(function () {
+
+        //Populate CDI OVERRIDE EDITS Table
+        $("#cdi-override").click(function (e) {
+
+            //Clears table before populating
+            $('table').bootstrapTable('destroy');
+
+            // Adds the title of the table to table
+            document.getElementById("addTableTitleHere").innerHTML = "<h3 style='display: flex; justify-content: space-between; margin-top: 20px'>" + cdioverrideedits[0].tableName + '<button class="btn btn-success">' + "Add" + "</button>" + "</h3>" ;
 
             // Creates the bootstrap table with the data provided
             $('table').bootstrapTable({
-                data: cdioverrideedits
+                data: cdioverrideedits[1].data
             });
+
+
         });
+
+        //Populate ENFORCE FLEET EDITS Table
+        $("#enforce-fleet").click(function (e) {
+
+            // Clears table before populating
+            $('table').bootstrapTable('destroy');
+
+            // Adds the title of the table to table
+            document.getElementById("addTableTitleHere").innerHTML = "<h3 style='display: flex; justify-content: space-between; margin-top: 20px'>" + enforcefleetedits[0].tableName + '<button class="btn btn-success">' + "Add" + "</button>" + "</h3>" ;
+
+            // Creates the bootstrap table with the data provided
+            $('table').bootstrapTable({
+                data: enforcefleetedits[1].data
+            });
+
+        });
+
+        //TODO Search Functionality
+        $(document).ready(function(){
+
+            $("#filter").on("keyup", function() {
+               var value = $(this).val().toLowerCase();
+               $("#tableBody tr").filter(function() {
+                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+               });
+            });
+
+          
+         });
+
+        //TODO ADD/EDIT/DELETE ROWS
 
     </script>
 
