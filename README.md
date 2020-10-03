@@ -1,6 +1,8 @@
 # BNSF-Edit-Rules
 
-Running html server using python. Install Python 3.x.x.
+In order to run all files you need to start an html server using python. 
 
-cd into BNSF file and run command >python -m http.server 8080
+Install Python 3.x.x. on your machine. (from company software center)
+
+cd into your BNSF folder and run this command: >python -m http.server 8080
 
