@@ -15,7 +15,8 @@ var cdioverrideedits = [
             "Maximum": "200",
             "LstMaintId": "B012936",
             "LstMaintTS": "2017-08-09 15:43.49.657699",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
         },
         {
             "RuleLevel": "Company Fleet",
@@ -28,7 +29,8 @@ var cdioverrideedits = [
             "Maximum": "4",
             "LstMaintId": "B744625",
             "LstMaintTS": "2013-12-17 09:52.49.657699",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
         },
         {
             "RuleLevel": "Customer",
@@ -41,7 +43,8 @@ var cdioverrideedits = [
             "Maximum": "200",
             "LstMaintId": "ED0DC358",
             "LstMaintTS": "2018-01-24 09:38.32.657699",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
         },
         {
             "RuleLevel": "Customer",
@@ -54,7 +57,8 @@ var cdioverrideedits = [
             "Maximum": "200",
             "LstMaintId": "B744625",
             "LstMaintTS": "2015-01-19 15:43.49.657699",
-            "Comments": "9/16/14 ok corey ellis"
+            "Comments": "9/16/14 ok corey ellis",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
         }]
     }
 ];
@@ -75,7 +79,9 @@ var enforcefleetedits = [
             "Maximum": "20",
             "LstMaintId": "B155759",
             "LstMaintTS": "2014-02-21 12.21.00.000000",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
+
         },
         {
             "RuleLevel": "Fleet",
@@ -88,7 +94,9 @@ var enforcefleetedits = [
             "Maximum": "20",
             "LstMaintId": "B155759",
             "LstMaintTS": "2014-02-21 12.21.00.000000",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
+
         },
         {
             "RuleLevel": "Fleet",
@@ -101,7 +109,9 @@ var enforcefleetedits = [
             "Maximum": "20",
             "LstMaintId": "B155759",
             "LstMaintTS": "2014-02-21 12.21.00.000000",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
+
         },
         {
             "RuleLevel": "Fleet",
@@ -114,7 +124,9 @@ var enforcefleetedits = [
             "Maximum": "20",
             "LstMaintId": "B155759",
             "LstMaintTS": "2014-02-21 12.21.00.000000",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
+
         },
         {
             "RuleLevel": "Fleet",
@@ -127,7 +139,9 @@ var enforcefleetedits = [
             "Maximum": "130",
             "LstMaintId": "B155759C",
             "LstMaintTS": "2013-06-19 15.57.22.876752",
-            "Comments": ""
+            "Comments": "",
+            "Actions" : "&nbsp;<a href='#editModal' class='edit' data-toggle='modal'><i class='icon-edit icon-large' data-toggle='tooltip' title='Edit'></i></a> &nbsp; <a href='#deleteModal' id=deleteRow class='delete' data-toggle='modal'><i class='icon-trash icon-large' data-toggle='tooltip' title='Delete'></i></a>"
+
         }]
     }
 ]
